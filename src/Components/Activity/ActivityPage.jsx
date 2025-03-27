@@ -7,8 +7,8 @@ import StickyNavbar from "../StickyNavbar";
 export default function ActivityPage() {
     const navigate = useNavigate();
 
-    const handlePhotos = (folderName, folderId) => {
-        navigate("/Activity/Photos", { state: { folderName, folderId } });  // 傳遞 folderName 到 /Photos
+    const handlePhotos = (folderName) => {
+        navigate("/Activity/Photos", { state: { folderName } });  // 傳遞 folderName 到 /Photos
     };
 
     return (
