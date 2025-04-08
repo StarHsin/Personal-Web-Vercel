@@ -4,7 +4,13 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { FaChevronRight, FaChevronLeft, AiOutlineClose } from "../icon";
 
-export default function Lightbox({ isOpen, images, onClose, initialIndex, imageType }) {
+export default function Lightbox({
+  isOpen,
+  images,
+  onClose,
+  initialIndex,
+  imageType,
+}) {
   const [currentImageIndex, setCurrentImageIndex] = useState(initialIndex || 0);
   const [currentImageType, setCurrentImageType] = useState(imageType || "");
 
@@ -39,7 +45,10 @@ export default function Lightbox({ isOpen, images, onClose, initialIndex, imageT
       >
         <AiOutlineClose />
       </button>
-      <button className="absolute left-5 text-white text-5xl" onClick={prevImage}>
+      <button
+        className="absolute left-5 text-white text-5xl"
+        onClick={prevImage}
+      >
         <FaChevronLeft />
       </button>
       <LazyLoadImage
@@ -48,7 +57,10 @@ export default function Lightbox({ isOpen, images, onClose, initialIndex, imageT
         className="max-w-full max-h-[80vh] rounded-lg shadow-lg"
         effect="blur"
       />
-      <button className="absolute right-5 text-white text-5xl" onClick={nextImage}>
+      <button
+        className="absolute right-5 text-white text-5xl"
+        onClick={nextImage}
+      >
         <FaChevronRight />
       </button>
     </div>

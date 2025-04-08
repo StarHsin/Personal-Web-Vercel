@@ -1,13 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim"; 
+import { loadSlim } from "@tsparticles/slim";
 
-export default function DynamicBackgrounds({height}) {
-
+export default function DynamicBackgrounds({ height }) {
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
-    })
+    });
   }, []);
 
   const options = useMemo(
@@ -18,7 +17,8 @@ export default function DynamicBackgrounds({height}) {
         },
       },
       fpsLimit: 120,
-      interactivity: {  //互動
+      interactivity: {
+        //互動
         events: {
           onClick: {
             enable: true, // 啟用點擊事件
@@ -43,7 +43,8 @@ export default function DynamicBackgrounds({height}) {
           },
         },
       },
-      particles: { //粒子設定
+      particles: {
+        //粒子設定
         color: {
           value: "#ffffff",
         },
@@ -88,12 +89,12 @@ export default function DynamicBackgrounds({height}) {
       },
       detectRetina: true,
     }),
-    [],
+    []
   );
 
   return (
     <div className="absolute w-full -z-10" style={{ height: `${height}px` }}>
       <Particles options={options} />
     </div>
-    );
+  );
 }
