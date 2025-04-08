@@ -1,4 +1,4 @@
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbSeparator } from "@/Components/ui/breadcrumb";
 import { MdHome } from "./icon";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
