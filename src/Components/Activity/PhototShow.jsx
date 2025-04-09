@@ -4,6 +4,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { storage } from "../../../firebaseConfig";
 import Lightbox from "./Lightbox";
+import { Progress } from "@/components/ui/progress"; // 確保路徑正確
 
 const PARENT_FOLDER_PATH = "images/Activity Img";
 
@@ -13,20 +14,31 @@ export default function PhotoShow({ folderName }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentLightboxIndex, setCurrentLightboxIndex] = useState(0);
   const [currentLightboxType, setCurrentLightboxType] = useState("");
+  const [loading, setLoading] = useState(true); // 加入 loading 狀態
+  const [error, setError] = useState(null);
+  const [progressValue, setProgressValue] = useState(0); // 可選：追蹤載入進度
 
   useEffect(() => {
     setPortraitImages([]);
     setLandscapeImages([]);
+    setLoading(true); // 開始載入時設定為 true
+    setError(null);
+    setProgressValue(0); // 重置進度
     const folderPath = `${PARENT_FOLDER_PATH}/${folderName}`;
     const listRef = ref(storage, folderPath);
 
     listAll(listRef)
       .then((res) => {
+        const totalImages = res.items.length;
+        let loadedImages = 0;
+
         const imagePromises = res.items.map(async (itemRef) => {
           const url = await getDownloadURL(itemRef);
           return new Promise((resolve) => {
             const img = new Image();
             img.onload = () => {
+              loadedImages++;
+              setProgressValue((loadedImages / totalImages) * 100); // 更新進度
               resolve({
                 url,
                 width: img.naturalWidth,
@@ -34,6 +46,8 @@ export default function PhotoShow({ folderName }) {
               });
             };
             img.onerror = () => {
+              loadedImages++;
+              setProgressValue((loadedImages / totalImages) * 100); // 即使載入失敗也更新進度
               resolve({ url, width: 0, height: 0 });
             };
             img.src = url;
@@ -58,6 +72,10 @@ export default function PhotoShow({ folderName }) {
       })
       .catch((error) => {
         console.error("Error fetching images:", error);
+        setError(error);
+      })
+      .finally(() => {
+        setLoading(false); // 載入完成後設定為 false
       });
   }, [folderName]); // 僅在 folderName 改變時重新載入
 
@@ -76,6 +94,17 @@ export default function PhotoShow({ folderName }) {
       ? portraitImages
       : landscapeImages;
   };
+
+  if (loading) {
+    return (
+      <div className="w-full max-w-5xl mx-auto p-4 flex flex-col items-center justify-center">
+        <Progress value={progressValue} className="w-full" />
+        <div className="text-gray-500 text-sm">
+          載入圖片中... ({Math.round(progressValue)}%)
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-5xl mx-auto p-4">
