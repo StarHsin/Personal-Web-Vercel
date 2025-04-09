@@ -4,7 +4,7 @@ import ActivityScraping from "./ActivityScraping";
 import StickyNavbar from "../StickyNavbar";
 import { ref, listAll, getDownloadURL, list } from "firebase/storage";
 import { storage } from "../../../firebaseConfig";
-import { Progress } from "@/components/ui/progress"; // 確保路徑正確
+import { Progress } from "@/Components/ui/progress"; // 確保路徑正確
 
 const PARENT_FOLDER_PATH = "images/Activity Img";
 const PREVIEW_IMAGE_COUNT = 4;

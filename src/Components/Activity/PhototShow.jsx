@@ -4,7 +4,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { storage } from "../../../firebaseConfig";
 import Lightbox from "./Lightbox";
-import { Progress } from "@/components/ui/progress"; // 確保路徑正確
+import { Progress } from "@/Components/ui/progress"; // 確保路徑正確
 
 const PARENT_FOLDER_PATH = "images/Activity Img";
 
