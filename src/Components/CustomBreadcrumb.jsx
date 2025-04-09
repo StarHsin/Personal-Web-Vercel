@@ -1,15 +1,13 @@
+import React from "react"; // 👈 引入 React
 import {
   Breadcrumb,
   BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbSeparator,
 } from "@/Components/ui/breadcrumb";
-import { MdHome } from "./icon";
-import { useNavigate, useLocation } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 export default function CustomBreadcrumb() {
-  const navigate = useNavigate();
   const location = useLocation();
   let pathnames = location.pathname.split("/").filter((x) => x);
 
@@ -25,16 +23,15 @@ export default function CustomBreadcrumb() {
             首頁
           </Link>
         </BreadcrumbItem>
+        {pathnames.map((name, index) => {
+          const routeTo = "/" + pathnames.slice(0, index + 1).join("/");
+          const isLast = index === pathnames.length - 1;
+          const displayName = convertBreadcrumbName(name);
 
-        <BreadcrumbItem>
-          {pathnames.map((name, index) => {
-            const routeTo = "/" + pathnames.slice(0, index + 1).join("/");
-            const isLast = index === pathnames.length - 1;
-            const displayName = convertBreadcrumbName(name);
-
-            return (
-              <BreadcrumbItem key={index}>
-                <BreadcrumbSeparator className="text-white hover:text-blue-700" />
+          return (
+            <React.Fragment key={index}>
+              <BreadcrumbSeparator className="text-white" />
+              <BreadcrumbItem>
                 {!isLast ? (
                   <Link to={routeTo} className="text-white hover:text-blue-700">
                     {displayName}
@@ -45,9 +42,9 @@ export default function CustomBreadcrumb() {
                   </span>
                 )}
               </BreadcrumbItem>
-            );
-          })}
-        </BreadcrumbItem>
+            </React.Fragment>
+          );
+        })}
       </BreadcrumbList>
     </Breadcrumb>
   );

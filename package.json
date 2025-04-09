@@ -16,7 +16,7 @@
     }
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-slot": "^1.2.0",
     "@tailwindcss/cli": "^4.0.17",
     "@tailwindcss/postcss": "^4.0.17",
     "@tailwindcss/vite": "^4.0.17",
@@ -26,6 +26,7 @@
     "clsx": "^2.1.1",
     "cz": "^1.8.2",
     "cz-conventional-changelog": "^2.1.0",
+    "embla-carousel-react": "^8.6.0",
     "firebase": "^11.5.0",
     "lucide-react": "^0.487.0",
     "react": "^19.0.0",
