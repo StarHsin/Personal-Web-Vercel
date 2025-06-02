@@ -22,6 +22,10 @@ export default function SideBar({ isOpen, toggleDrawer }) {
     navigate("/Activity");
   };
 
+  const handleWeb = () => {
+    navigate("/Web");
+  };
+
   return (
     <div>
       <div
@@ -63,6 +67,14 @@ export default function SideBar({ isOpen, toggleDrawer }) {
                 <FaChevronDown />
               </button>
               <ul className={`py-2 space-y-2 ${dropDown ? "block" : "hidden"}`}>
+                <li>
+                  <button
+                    onClick={handleWeb}
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    Web
+                  </button>
+                </li>
                 <li>
                   <div className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100">
                     微積分
