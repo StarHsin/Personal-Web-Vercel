@@ -26,6 +26,10 @@ export default function SideBar({ isOpen, toggleDrawer }) {
     navigate("/Web");
   };
 
+  const handleJapanese = () => {
+    navigate("/Japanese");
+  };
+
   return (
     <div>
       <div
@@ -76,9 +80,12 @@ export default function SideBar({ isOpen, toggleDrawer }) {
                   </button>
                 </li>
                 <li>
-                  <div className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100">
-                    微積分
-                  </div>
+                  <button
+                    onClick={handleJapanese}
+                    className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100"
+                  >
+                    日語
+                  </button>
                 </li>
                 <li>
                   <div className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">

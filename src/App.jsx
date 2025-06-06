@@ -14,6 +14,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/awards" element={<DynamicBackgrounds />} />
           <Route path="/Web" element={<Web />} />
+          <Route path="/Japanese" element={<Web />} />
           <Route path="/Activity" element={<ActivityPage />} />
           <Route path="/Activity/Photos" element={<ActivityPhotos />} />
         </Routes>
