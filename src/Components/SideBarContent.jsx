@@ -63,7 +63,7 @@ export default function SideBarContent() {
               className="flex w-full items-center justify-start p-2 text-gray-500 hover:text-gray-900"
             >
               <GrCertificate className="h-5 w-5" />
-              <span className="ml-3 font-bold">獲獎紀錄</span>
+              <span className="ml-3 font-semibold">獲獎紀錄</span>
             </Button>
           </li>
           <li>
@@ -75,7 +75,7 @@ export default function SideBarContent() {
                   className="flex w-full items-center justify-start p-2 text-gray-500 hover:text-gray-900"
                 >
                   <PiNotePencilBold className="h-5 w-5" />
-                  <span className="ml-3 flex-1 whitespace-nowrap text-left rtl:text-right font-bold">
+                  <span className="ml-3 flex-1 whitespace-nowrap text-left rtl:text-right font-semibold">
                     筆記
                   </span>
                   <FaChevronDown
@@ -91,18 +91,18 @@ export default function SideBarContent() {
                     <Button
                       onClick={handleWeb}
                       variant="ghost"
-                      className="flex w-full items-center justify-start rounded-lg pl-11 text-gray-900 hover:bg-gray-100"
+                      className="flex w-full items-center justify-start rounded-lg pl-11 font-semibold text-gray-900 hover:bg-gray-100"
                     >
-                      Web
+                      使用React製作個人網頁
                     </Button>
                   </li>
                   <li>
                     <Button
                       onClick={handleJapanese}
                       variant="ghost"
-                      className="flex w-full items-center justify-start rounded-lg pl-11 text-gray-900 hover:bg-gray-100"
+                      className="flex w-full items-center justify-start rounded-lg pl-11 font-semibold text-gray-900 hover:bg-gray-100"
                     >
-                      日語
+                      日語學習筆記
                     </Button>
                   </li>
                 </ul>
@@ -114,7 +114,7 @@ export default function SideBarContent() {
           <li>
             <Button
               variant="ghost"
-              className="flex w-full items-center justify-start p-2 text-gray-500 hover:text-gray-900"
+              className="flex w-full items-center justify-start p-2 font-semibold text-gray-500 hover:text-gray-900"
             >
               <FaRegFileAlt className="h-5 w-5" />
               <span className="ml-3 font-bold">作品集</span>
@@ -125,7 +125,7 @@ export default function SideBarContent() {
             <Button
               onClick={handleActivity}
               variant="ghost"
-              className="flex w-full items-center justify-start p-2 text-gray-500 hover:text-gray-900"
+              className="flex w-full items-center justify-start p-2 font-semibold text-gray-500 hover:text-gray-900"
             >
               <FiActivity className="h-5 w-5" />
               <span className="ml-3 font-bold">活動</span>
@@ -135,8 +135,11 @@ export default function SideBarContent() {
       </div>
 
       <div className="mt-auto flex items-center">
-        <Avatar className="h-8 w-8 rounded-md">
-          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+        <Avatar className="h-10 w-10 rounded-md">
+          <AvatarImage
+            src="https://github.com/StarHsin/Personal-Web-Vercel/blob/main/src/img/36103.jpg?raw=true"
+            alt="@shadcn"
+          />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <div className="ml-4 flex flex-col">

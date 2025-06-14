@@ -19,7 +19,7 @@ export default function CustomBreadcrumb() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <Link to="/" className="text-white hover:text-blue-700">
+          <Link to="/" className="font-semibold text-white hover:text-blue-700">
             首頁
           </Link>
         </BreadcrumbItem>
@@ -30,14 +30,17 @@ export default function CustomBreadcrumb() {
 
           return (
             <React.Fragment key={index}>
-              <BreadcrumbSeparator className="text-white" />
+              <BreadcrumbSeparator className="font-semibold text-white" />
               <BreadcrumbItem>
                 {!isLast ? (
-                  <Link to={routeTo} className="text-white hover:text-blue-700">
+                  <Link
+                    to={routeTo}
+                    className="font-semibold text-white hover:text-blue-700"
+                  >
                     {displayName}
                   </Link>
                 ) : (
-                  <span className="text-white hover:text-blue-700">
+                  <span className="font-semibold text-white hover:text-blue-700">
                     {displayName}
                   </span>
                 )}

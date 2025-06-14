@@ -1,10 +1,10 @@
-// StickyNavbar.jsx (或 .tsx)
 import React from "react";
 import { FaUser } from "./icon"; // 假設這裡定義了FaUser
 import { AiOutlineMenu } from "./icon"; // 假設這裡定義了AiOutlineMenu
 import CustomBreadcrumb from "./CustomBreadcrumb";
 import { Sheet, SheetTrigger, SheetContent } from "./ui/sheet"; // 從 shadcn/ui 導入 Sheet 相關元件
 import SideBarContent from "./SideBarContent"; // 我們將把 SideBar 的內容提取到一個新元件中
+import { Button } from "./ui/button"; // 從 shadcn/ui 導入 Button 元件
 
 export default function StickyNavbar() {
   return (
@@ -24,9 +24,16 @@ export default function StickyNavbar() {
         </Sheet>
 
         <CustomBreadcrumb />
-        <button className="w-10 h-10 flex items-center justify-center overflow-hidden bg-white rounded-full">
-          <FaUser className="w-10 h-10 text-gray-500 relative top-1" />
-        </button>
+        <Button className="w-15 h-10 flex items-center justify-center overflow-hidden hover:bg-gray-500 bg-transparent rounded-xl">
+          <a
+            href="https://github.com/StarHsin/Personal-Web-Vercel"
+            target="_blank"
+            rel="noopener noreferrer" // 建議為了安全考量加上此屬性
+            className="text-white font-semibold"
+          >
+            Github
+          </a>
+        </Button>
       </div>
     </nav>
   );
