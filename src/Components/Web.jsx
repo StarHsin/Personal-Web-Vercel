@@ -10,11 +10,11 @@ export default function Web() {
     // 根據路徑名稱設定不同的 Notion 頁面 URL
     if (location.pathname === "/Web") {
       setNotionPageUrl(
-        "https://somber-verse-1b6.notion.site/ebd/1c22cef653fa809681e4e490c8dbab91"
+        "https://flashy-appliance-d7b.notion.site/ebd/20efa315262c80fb8b07c13ab4ef5825"
       );
     } else if (location.pathname === "/Japanese") {
       setNotionPageUrl(
-        "https://somber-verse-1b6.notion.site/ebd/20a2cef653fa80a7856fe401edf2d481"
+        "https://flashy-appliance-d7b.notion.site/ebd/20efa315262c8087b568f74eb5af9b6a"
       );
     }
   }, [location.pathname]); // 當 location.pathname 改變時重新執行這個 effect
