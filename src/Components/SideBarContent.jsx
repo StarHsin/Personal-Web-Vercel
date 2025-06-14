@@ -7,6 +7,7 @@ import { FiActivity } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 // 導入 shadcn/ui 元件
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button"; // 使用 shadcn/ui 的 Button
 import {
   SheetClose,
@@ -104,26 +105,12 @@ export default function SideBarContent() {
                       日語
                     </Button>
                   </li>
-                  <li>
-                    <Button
-                      variant="ghost"
-                      className="flex w-full items-center justify-start rounded-lg pl-11 text-gray-900 hover:bg-gray-100"
-                    >
-                      工程數學
-                    </Button>
-                  </li>
-                  <li>
-                    <Button
-                      variant="ghost"
-                      className="flex w-full items-center justify-start rounded-lg pl-11 text-gray-900 hover:bg-gray-100"
-                    >
-                      電路學
-                    </Button>
-                  </li>
                 </ul>
               </CollapsibleContent>
             </Collapsible>
           </li>
+
+          {/*
           <li>
             <Button
               variant="ghost"
@@ -132,7 +119,8 @@ export default function SideBarContent() {
               <FaRegFileAlt className="h-5 w-5" />
               <span className="ml-3 font-bold">作品集</span>
             </Button>
-          </li>
+          </li> */}
+
           <li>
             <Button
               onClick={handleActivity}
@@ -144,6 +132,19 @@ export default function SideBarContent() {
             </Button>
           </li>
         </ul>
+      </div>
+
+      <div className="mt-auto flex items-center">
+        <Avatar className="h-8 w-8 rounded-md">
+          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <div className="ml-4 flex flex-col">
+          <span className="text-gray-700 text-sm font-semibold">李慧芯</span>
+          <span className="text-gray-500 text-xs">
+            3b012015@gm.student.ncut.edu.tw
+          </span>
+        </div>
       </div>
     </div>
   );

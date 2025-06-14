@@ -18,7 +18,7 @@ export default function StickyNavbar() {
             </button>
           </SheetTrigger>
           {/* SheetContent 包含側邊欄的內容 */}
-          <SheetContent side="left" className="w-64 p-0">
+          <SheetContent side="left" className="w-72 p-0">
             <SideBarContent />
           </SheetContent>
         </Sheet>
