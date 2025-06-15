@@ -13,7 +13,8 @@ export default function DynamicBackgrounds({ height }) {
     () => ({
       background: {
         color: {
-          value: "#1e293b", //slate-900
+          // 將背景色從 slate-900 調整為更柔和的深灰色
+          value: "#1e293b", // 較柔和的深灰色
         },
       },
       fpsLimit: 120,
@@ -46,10 +47,12 @@ export default function DynamicBackgrounds({ height }) {
       particles: {
         //粒子設定
         color: {
-          value: "#ffffff",
+          // 將粒子顏色調整為淺灰色，使其在新的背景色上更清晰
+          value: "#cccccc",
         },
         links: {
-          color: "#ffffff",
+          // 連結顏色也同步調整
+          color: "#cccccc",
           distance: 150,
           enable: true,
           opacity: 0.5,

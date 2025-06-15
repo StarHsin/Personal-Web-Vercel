@@ -8,14 +8,17 @@ import { Button } from "./ui/button"; // 從 shadcn/ui 導入 Button 元件
 
 export default function StickyNavbar() {
   return (
-    <nav className="fixed w-full top-0 start-0 border-b-2 border-gray-500 z-50">
-      <div className="flex bg-slate-800 items-center justify-between p-4">
+    <nav className="fixed w-full top-0 start-0 z-50 shadow-md">
+      <div className="flex bg-transparent items-center justify-between p-4">
         {/* 使用 SheetTrigger 包裹觸發按鈕 */}
         <Sheet>
           <SheetTrigger asChild>
-            <button className="flex items-center justify-center text-white bg-transparent hover:bg-gray-500 rounded-lg w-10 h-10 border-2 border-gray-500">
-              <AiOutlineMenu className="w-8 h-8" />
-            </button>
+            <Button
+              variant="ghost"
+              className="flex items-center justify-center text-white bg-transparent hover:bg-gray-500 rounded-lg w-10 h-10"
+            >
+              <AiOutlineMenu className="w-12 h-12" />
+            </Button>
           </SheetTrigger>
           {/* SheetContent 包含側邊欄的內容 */}
           <SheetContent side="left" className="w-72 p-0">

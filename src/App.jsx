@@ -6,12 +6,14 @@ import DynamicBackgrounds from "./Components/DynamicBackgrounds";
 import ActivityPhotos from "./Components/Activity/ActivityPhotos";
 import Web from "./Components/Web";
 
+import Home from "./Components/Home";
+
 export default function App() {
   return (
     <>
       <Router basename="/">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Home />} />
           <Route path="/awards" element={<DynamicBackgrounds />} />
           <Route path="/Web" element={<Web />} />
           <Route path="/Japanese" element={<Web />} />
