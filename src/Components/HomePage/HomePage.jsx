@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import DynamicBackgrounds from "../DynamicBackgrounds";
 import StickyNavbar from "../StickyNavbar";
-import backgroundImage from "../../img/02.jpg";
+import LoadFirebaseImg from "../LoadFirebaseImg";
 import TextAnimation from "../TextAnimation";
 import CardText from "./CardText";
 import Timeline from "../Timeline";
@@ -29,11 +29,7 @@ export default function HomePage() {
         className="relative flex items-center justify-center bg-white"
         style={{ height: `${height * 0.6}px` }}
       >
-        <img
-          src={backgroundImage}
-          alt="背景圖片"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <LoadFirebaseImg path="images/Other/02.jpg" />
         <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
         {/* 圖片疊加層 */}
         <div className="relative z-10 text-white text-3xl font-bold">
