@@ -5,9 +5,12 @@ export default function CardText() {
   return (
     <Card className="w-4/5 md:w-3/5 lg:w-3/5 p-16 shadow-lg bg-slate-800 border-slate-800 z-20">
       <CardContent className="flex flex-col items-start text-left">
-        <h2 className="text-4xl font-bold mb-4 w-full text-center text-gray-200">
+        <h2 className="text-4xl font-bold mb-2 w-full text-center text-gray-200">
           李慧芯
         </h2>
+        <h3 className="text-base font-normal mb-4 w-full text-center text-gray-200">
+          每天讓自己進步一點
+        </h3>
         <h3 className="text-2xl font-bold mb-2 text-gray-200 mt-4">
           關於About
         </h3>

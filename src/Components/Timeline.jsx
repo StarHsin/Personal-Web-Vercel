@@ -1,5 +1,5 @@
 import React from "react";
-import TimelineItem from "./TimelineItem";
+import TimelineItem from "./HomePage/TimelineItem";
 import { competitions } from "../data/competitions";
 
 export default function Timeline() {

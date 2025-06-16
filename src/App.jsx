@@ -5,7 +5,7 @@ import DynamicBackgrounds from "./Components/DynamicBackgrounds";
 import ActivityPhotos from "./Components/Activity/ActivityPhotos";
 import Web from "./Components/Web";
 
-import HomePage from "./Components/HomePage";
+import HomePage from "./Components/HomePage/HomePage";
 
 export default function App() {
   return (

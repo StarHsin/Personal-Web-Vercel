@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import DynamicBackgrounds from "./DynamicBackgrounds";
-import StickyNavbar from "./StickyNavbar";
-import backgroundImage from "../img/02.jpg";
-import TextAnimation from "./TextAnimation";
+import DynamicBackgrounds from "../DynamicBackgrounds";
+import StickyNavbar from "../StickyNavbar";
+import backgroundImage from "../../img/02.jpg";
+import TextAnimation from "../TextAnimation";
 import CardText from "./CardText";
-import Timeline from "./Timeline";
+import Timeline from "../Timeline";
 
 export default function HomePage() {
   const [height, setHeight] = useState(window.innerHeight);
