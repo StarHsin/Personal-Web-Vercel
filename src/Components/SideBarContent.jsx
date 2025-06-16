@@ -137,7 +137,7 @@ export default function SideBarContent() {
       <div className="mt-auto flex items-center">
         <Avatar className="h-10 w-10 rounded-md">
           <AvatarImage
-            src="https://github.com/StarHsin/Personal-Web-Vercel/blob/main/src/img/36103.jpg?raw=true"
+            src="https://github.com/StarHsin/Personal-Web-Vercel/blob/main/public/36103.jpg?raw=true"
             alt="@shadcn"
           />
           <AvatarFallback>CN</AvatarFallback>
