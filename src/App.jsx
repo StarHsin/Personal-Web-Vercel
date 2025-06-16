@@ -4,6 +4,7 @@ import ActivityPage from "./Components/Activity/ActivityPage";
 import DynamicBackgrounds from "./Components/DynamicBackgrounds";
 import ActivityPhotos from "./Components/Activity/ActivityPhotos";
 import Web from "./Components/Web";
+import Awards from "./Components/Award/Awards";
 
 import HomePage from "./Components/HomePage/HomePage";
 
@@ -13,7 +14,7 @@ export default function App() {
       <Router basename="/">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/awards" element={<DynamicBackgrounds />} />
+          <Route path="/awards" element={<Awards />} />
           <Route path="/Web" element={<Web />} />
           <Route path="/Japanese" element={<Web />} />
           <Route path="/Activity" element={<ActivityPage />} />

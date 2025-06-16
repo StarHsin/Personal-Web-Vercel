@@ -11,22 +11,19 @@ export default function StickyNavbar() {
   const location = useLocation(); // 獲取當前路由信息
 
   // 根據初始路由設定 scrolled 的初始值
-  const [scrolled, setScrolled] = useState(
-    location.pathname === "/Web" || location.pathname === "/Japanese"
-  );
+  const [scrolled, setScrolled] = useState(location.pathname === "/");
 
   useEffect(() => {
     const handleScroll = () => {
       // 當滾動距離超過 50px 時，設定 scrolled 為 true，否則為 false
-      if (location.pathname === "/Web" || location.pathname === "/Japanese") {
-        console.log("route");
-        setScrolled(true);
-      } else {
+      if (location.pathname === "/") {
         if (window.scrollY > 50) {
           setScrolled(true);
         } else {
           setScrolled(false);
         }
+      } else {
+        setScrolled(true);
       }
     };
 
