@@ -1,5 +1,5 @@
-import { Separator } from "@/components/ui/separator";
-import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "../ui/separator";
+import { Card, CardContent } from "../ui/card";
 
 export default function CardText() {
   return (
