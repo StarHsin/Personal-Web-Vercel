@@ -1,6 +1,6 @@
 import DynamicBackgrounds from "../DynamicBackgrounds";
 import StickyNavbar from "../StickyNavbar";
-import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "../ui/tabs";
 import AwardCategory from "./AwardCategory";
 import { motion } from "framer-motion"; // 如果您安裝了 Framer Motion
 
