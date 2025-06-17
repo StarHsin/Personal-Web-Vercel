@@ -16,7 +16,7 @@ const IconMap = {
   medal: FaMedal,
 };
 
-export default function TimelineItem({ item, index }) {
+export default function TimelineItem({ item, index, width }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 }); // 當項目有 50% 進入視圖時觸發一次
 
@@ -39,18 +39,25 @@ export default function TimelineItem({ item, index }) {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
     >
-      <div className="order-1 bg-transparent w-3/4 px-6 py-4 text-left ">
-        {" "}
-        {/* 內容在左側，文字右對齊 */}
+      <div
+        className={`order-1 bg-transparent py-4 text-left md:w-9/20 md:mx-auto ${
+          width < 470 ? "ps-3 w-4/5" : "px-6 w-3/4"
+        }`}
+      >
         <h3 className="mb-3 font-bold text-gray-200 text-2xl">{item.year}</h3>
         <h4 className="mb-2 font-bold text-gray-200 text-lg">{item.title}</h4>
         <p className="font-medium text-md leading-snug tracking-wide text-gray-200 text-opacity-100">
           {item.description}
         </p>
       </div>
+
       <div
-        className="z-20 flex items-center justify-center bg-sky-600 shadow-xl w-10 h-10 rounded-full absolute"
-        style={{ left: "20%", transform: "translateX(-50%)" }} // 調整 left 值與線條對齊，並用 translateX 居中
+        className={`z-20 flex items-center justify-center bg-sky-600 shadow-xl w-10 h-10 rounded-full absolute md:left-1/4 ${
+          width < 470 ? "left-1/8" : "left-1/5"
+        }`}
+        style={{
+          transform: "translateX(-50%)",
+        }} // 調整 left 值與線條對齊，並用 translateX 居中
       >
         <IconComponent className="text-white text-2xl" />
       </div>

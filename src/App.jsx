@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ActivityPage from "./Components/Activity/ActivityPage";
-import DynamicBackgrounds from "./Components/DynamicBackgrounds";
+import Home from "./Components/HomePage/Home";
 import ActivityPhotos from "./Components/Activity/ActivityPhotos";
 import Web from "./Components/Web";
 import Awards from "./Components/Award/Awards";
@@ -13,7 +13,7 @@ export default function App() {
     <>
       <Router basename="/">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Home />} />
           <Route path="/awards" element={<Awards />} />
           <Route path="/Web" element={<Web />} />
           <Route path="/Japanese" element={<Web />} />

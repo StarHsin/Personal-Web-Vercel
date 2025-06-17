@@ -1,37 +1,70 @@
+import { useEffect, useState } from "react";
 import { Separator } from "../ui/separator";
 import { Card, CardContent } from "../ui/card";
 
 export default function CardText() {
+  const [width, setWidth] = useState(window.innerWidth);
+
   return (
-    <Card className="w-4/5 md:w-3/5 lg:w-3/5 p-16 shadow-lg bg-slate-800 border-slate-800 z-20">
+    <Card className="w-4/5 md:w-3/5 shadow-lg bg-slate-800 border-slate-800 z-20">
       <CardContent className="flex flex-col items-start text-left">
-        <h2 className="text-4xl font-bold mb-2 w-full text-center text-gray-200">
+        <div
+          className={`text-gray-200 ${
+            width < 470 ? "text-2xl" : "text-4xl"
+          } font-bold w-full mt-6 text-center`}
+        >
           李慧芯
-        </h2>
-        <h3 className="text-base font-normal mb-4 w-full text-center text-gray-200">
+        </div>
+        <div
+          className={`text-gray-200 ${
+            width < 470 ? "text-sm" : "text-base"
+          } font-normal w-full text-center`}
+        >
           每天讓自己進步一點
-        </h3>
-        <h3 className="text-2xl font-bold mb-2 text-gray-200 mt-4">
+        </div>
+        <div
+          className={`text-gray-200 ${
+            width < 470 ? "text-lg" : "text-2xl"
+          } font-bold mx-[5%] mt-4`}
+        >
           關於About
-        </h3>
-        <Separator className="mb-4 bg-gray-200" />
-        <div className="text-gray-200 mb-4 w-full text-center text-xl space-y-1 ">
-          {" "}
-          {/* 使用 space-y-1 增加段落間距 */}
-          <p>國立勤益科技大學 電機工程系 應屆畢業生</p>
-          <p>即將就讀 國立臺北科技大學 電機工程系 碩士班</p>
+        </div>
+        <Separator className="mb-4 bg-gray-200 mx-auto" />
+        <div
+          className={`text-gray-200 ${
+            width < 470 ? "text-base" : "text-xl"
+          } font-normal w-full px-5 text-center space-y-1`}
+        >
+          <p>
+            國立勤益科技大學 電機工程系
+            {width < 470 ? <br /> : null}
+            應屆畢業生
+          </p>
+          <p>
+            即將就讀 國立臺北科技大學 {width < 470 ? <br /> : null}
+            電機工程系 碩士班
+          </p>
           <p>正在學習：Python、React...</p>
         </div>
-        <h3 className="text-2xl font-bold mb-2 text-gray-200 mt-4">
+        <div
+          className={`text-gray-200 ${
+            width < 470 ? "text-lg" : "text-2xl"
+          } font-bold mx-[5%] mt-8`}
+        >
           經歷 Experiences
-        </h3>
-        <Separator className="mb-4 bg-gray-200" />
-        <ul className="text-gray-200 mb-4 space-y-1 pl-4 list-disc list-inside">
-          {" "}
-          {/* 使用 ul, li，並加入 list-disc 和 list-inside */}
+        </div>
+        <Separator className="mb-4 bg-gray-200 mx-auto" />
+        <ul
+          className={`text-gray-200 ${
+            width < 470 ? "pl-4" : "px-10"
+          } md:px-15 list-disc list-inside space-y-1`}
+        >
           <li>
-            2021年華碩文教基金會 i-Taiwan 數位志工計畫{" "}
-            <span className="font-bold">隊輔</span>
+            2021年華碩文教基金會 {width < 470 ? <br /> : null}
+            <span className={width < 470 ? "px-6" : ""}>
+              i-Taiwan 數位志工計畫
+              <span className="font-bold"> 隊輔</span>
+            </span>
           </li>
           <li>
             111年寒假教育優先區營隊 <span className="font-bold">隊輔</span>
@@ -43,14 +76,19 @@ export default function CardText() {
             教育部數位學伴 <span className="font-bold">國三數學學伴</span>
           </li>
         </ul>
-
-        <h3 className="text-2xl font-bold mb-2 text-gray-200 mt-4">
+        <div
+          className={`text-gray-200 ${
+            width < 470 ? "text-lg" : "text-2xl"
+          } font-bold mx-[5%] mt-8`}
+        >
           社團 Club
-        </h3>
-        <Separator className="mb-4 bg-gray-200" />
-        <ul className="text-gray-200 mb-4 space-y-1 pl-4 list-disc list-inside">
-          {" "}
-          {/* 使用 ul, li，並加入 list-disc 和 list-inside */}
+        </div>
+        <Separator className="mb-4 bg-gray-200 mx-auto" />
+        <ul
+          className={`text-gray-200 ${
+            width < 470 ? "pl-4" : "px-10"
+          } md:px-15 list-disc list-inside space-y-1 mb-6`}
+        >
           <li>
             2021年勤益校安嘉年華 <span className="font-bold">表演</span>
           </li>
