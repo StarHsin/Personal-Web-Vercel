@@ -12,33 +12,33 @@ const MotionDiv = motion.div;
 
 export default function Awards() {
   return (
-    <div className="w-full min-h-screen overflow-hidden bg-gray-900 text-white">
+    <div className="relative min-h-screen w-full overflow-x-hidden bg-gray-900 text-white">
       <DynamicBackgrounds />
       <StickyNavbar />
 
-      <main className="container mx-auto px-4 py-16 relative top-10 z-10">
-        <h1 className="text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-sky-600">
+      <main className="relative z-10 mx-auto w-full max-w-6xl px-3 pb-12 pt-28 sm:px-4 lg:pb-16">
+        <h1 className="mb-8 bg-gradient-to-r from-sky-300 to-sky-600 bg-clip-text text-center text-3xl font-extrabold text-transparent sm:mb-12 sm:text-5xl">
           我的榮譽與成就
         </h1>
 
-        <div className="flex justify-center mb-8">
+        <div className="mb-8 flex justify-center">
           <Tabs defaultValue="skills" className="w-full max-w-4xl">
-            <TabsList className="grid w-full grid-cols-3 bg-gray-800 rounded-lg">
+            <TabsList className="grid min-h-11 w-full grid-cols-3 rounded-lg bg-gray-800">
               <TabsTrigger
                 value="skills"
-                className="data-[state=active]:bg-sky-500 data-[state=active]:text-gray-900 text-gray-200 hover:text-white text-base"
+                className="whitespace-normal px-2 py-2 text-xs text-gray-200 hover:text-white data-[state=active]:bg-sky-500 data-[state=active]:text-gray-900 sm:text-base"
               >
                 技能競賽
               </TabsTrigger>
               <TabsTrigger
                 value="academics"
-                className="data-[state=active]:bg-sky-500 data-[state=active]:text-gray-900 text-gray-200 hover:text-white text-base"
+                className="whitespace-normal px-2 py-2 text-xs text-gray-200 hover:text-white data-[state=active]:bg-sky-500 data-[state=active]:text-gray-900 sm:text-base"
               >
                 學業表現
               </TabsTrigger>
               <TabsTrigger
                 value="literary"
-                className="data-[state=active]:bg-sky-500 data-[state=active]:text-gray-900 text-gray-200 hover:text-white "
+                className="whitespace-normal px-2 py-2 text-xs text-gray-200 hover:text-white data-[state=active]:bg-sky-500 data-[state=active]:text-gray-900 sm:text-base"
               >
                 文學競賽
               </TabsTrigger>

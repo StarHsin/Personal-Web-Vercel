@@ -27,7 +27,7 @@ export default function LoadFirebaseImg({ path }) {
     <img
       src={backgroundImageUrl}
       alt="背景圖片"
-      className="absolute inset-0 w-full h-full object-cover"
+      className="absolute inset-0 z-0 h-full w-full object-cover"
     />
   );
 }

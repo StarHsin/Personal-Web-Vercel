@@ -11,14 +11,14 @@ export default function ActivityPhotos() {
     : folderName; // 否則，保持原樣
 
   return (
-    <nav className="absolute w-full min-h-screen pt-20 bg-slate-800">
+    <main className="min-h-screen w-full bg-slate-800 px-3 pt-24 sm:px-4">
       <StickyNavbar />
-      <div className="flex flex-col justify-center items-center border-4 border-transparent rounded-lg bg-transparent">
-        <div className="text-[2rem] leading-none font-bold text-white">
+      <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center rounded-lg border-4 border-transparent bg-transparent">
+        <div className="max-w-full break-words text-center text-2xl font-bold leading-tight text-white sm:text-[2rem]">
           {displayedFolderName}
         </div>
         <PhotoShow folderName={folderName} />
       </div>
-    </nav>
+    </main>
   );
 }

@@ -16,8 +16,8 @@ export default function CustomBreadcrumb() {
   }
 
   return (
-    <Breadcrumb>
-      <BreadcrumbList>
+    <Breadcrumb className="min-w-0">
+      <BreadcrumbList className="justify-center gap-1 text-xs sm:gap-2 sm:text-sm">
         <BreadcrumbItem>
           <Link to="/" className="font-semibold text-white hover:text-blue-700">
             首頁
@@ -35,12 +35,12 @@ export default function CustomBreadcrumb() {
                 {!isLast ? (
                   <Link
                     to={routeTo}
-                    className="font-semibold text-white hover:text-blue-700"
+                    className="block max-w-[7rem] truncate font-semibold text-white hover:text-blue-700 sm:max-w-none"
                   >
                     {displayName}
                   </Link>
                 ) : (
-                  <span className="font-semibold text-white hover:text-blue-700">
+                  <span className="block max-w-[7rem] truncate font-semibold text-white hover:text-blue-700 sm:max-w-none">
                     {displayName}
                   </span>
                 )}
@@ -58,6 +58,7 @@ function convertBreadcrumbName(name) {
     Activity: "活動總覽",
     Photos: "活動相簿",
     awards: "獎項",
+    Resume: "簡歷",
   };
   return nameMap[name] || name;
 }

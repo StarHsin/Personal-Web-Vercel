@@ -2,7 +2,7 @@ import { useEffect, useMemo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
-export default function DynamicBackgrounds({ height }) {
+export default function DynamicBackgrounds({ height, className = "absolute inset-0 z-0" }) {
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -96,8 +96,12 @@ export default function DynamicBackgrounds({ height }) {
   );
 
   return (
-    <div className="absolute w-full -z-10" style={{ height: `${height}px` }}>
-      <Particles options={options} />
+    <div
+      className={`${className} h-full w-full overflow-hidden`}
+      style={height ? { minHeight: `${height}px` } : undefined}
+      aria-hidden="true"
+    >
+      <Particles className="h-full w-full" options={options} />
     </div>
   );
 }

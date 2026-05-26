@@ -20,14 +20,14 @@ export default function Web() {
   }, [location.pathname]); // 當 location.pathname 改變時重新執行這個 effect
 
   return (
-    <div className="absolute w-full min-h-screen pt-20 bg-white">
+    <main className="min-h-screen w-full bg-white pt-20">
       <StickyNavbar />
-      <div className="flex justify-center items-center h-[calc(100vh-80px)]">
+      <div className="flex h-[calc(100svh-5rem)] min-h-[520px] items-center justify-center">
         {/* 只有當 notionPageUrl 有值時才渲染 iframe */}
         {notionPageUrl ? (
           <iframe
             src={notionPageUrl}
-            className="w-full h-full border-none"
+            className="h-full w-full border-none"
             title="Notion Page"
             frameBorder="0"
             allowFullScreen
@@ -36,6 +36,6 @@ export default function Web() {
           <div>載入中或頁面不存在...</div> // 載入中提示
         )}
       </div>
-    </div>
+    </main>
   );
 }

@@ -111,11 +111,49 @@
 }
 
 @layer base {
+  html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   body {
     @apply bg-background text-foreground;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100svh;
+  }
+
+  img,
+  video,
+  canvas,
+  iframe {
+    max-width: 100%;
+  }
+
+  img,
+  video {
+    height: auto;
+  }
+
+  iframe {
+    display: block;
   }
 }
 
@@ -125,8 +163,8 @@
 
 .profile-photo-frame {
   position: relative;
-  width: 120px;
-  height: 150px;
+  width: clamp(96px, 28vw, 120px);
+  height: clamp(120px, 35vw, 150px);
   padding: 5px;
   background: white;
   border: 1px solid #d4d4d8;

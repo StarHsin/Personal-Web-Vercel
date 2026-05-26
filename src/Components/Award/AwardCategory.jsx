@@ -11,11 +11,11 @@ export default function AwardCategory({ title, data }) {
 
   // 接收 title 和 data props
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold text-center text-gray-200 mb-8">
+    <div className="mx-auto w-full px-0 py-4 sm:px-4 sm:py-8">
+      <h2 className="mb-6 text-center text-2xl font-bold text-gray-200 sm:mb-8 sm:text-3xl">
         {title}
       </h2>
-      <div className="max-w-3xl mx-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+      <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-lg bg-gray-800 shadow-lg">
         {/* 直接遍歷傳入的 data prop */}
         {sortedData.map((item, index) => (
           <AwardItem key={index} item={item} />

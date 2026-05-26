@@ -6,13 +6,17 @@ const AwardItem = ({ item }) => {
   const IconComponent = item.icon ? FaIcons[item.icon] : null;
 
   return (
-    <div className="flex items-start space-x-4 p-4 border-b border-gray-700 last:border-b-0">
-      <div className="flex-shrink-0 pt-1">
+    <div className="flex items-start gap-3 border-b border-gray-700 p-4 last:border-b-0 sm:gap-4">
+      <div className="shrink-0 pt-1">
         {IconComponent && <IconComponent className="text-2xl text-sky-500" />}
       </div>
-      <div>
-        <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-        <p className="text-gray-300">{item.description}</p>
+      <div className="min-w-0 text-left">
+        <h3 className="break-words text-lg font-semibold text-white sm:text-xl">
+          {item.title}
+        </h3>
+        <p className="break-words text-sm text-gray-300 sm:text-base">
+          {item.description}
+        </p>
         <p className="text-gray-400 text-sm mt-1">年份: {item.year}</p>
       </div>
     </div>

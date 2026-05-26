@@ -1,66 +1,39 @@
-import { useState } from "react";
 import { Separator } from "../ui/separator";
 import { Card, CardContent } from "../ui/card";
 
 export default function CardText() {
-  const [width, _setWidth] = useState(window.innerWidth);
-
   return (
-    <Card className="w-4/5 md:w-3/5 shadow-lg bg-slate-800 border-slate-800 z-20">
-      <CardContent className="flex flex-col items-start text-left">
-        <div
-          className={`text-gray-200 ${
-            width < 470 ? "text-2xl" : "text-4xl"
-          } font-bold w-full mt-6 text-center`}
-        >
+    <Card className="z-20 w-full max-w-3xl border-slate-800 bg-slate-800 shadow-lg lg:max-w-4xl">
+      <CardContent className="flex flex-col items-start px-4 text-left sm:px-6 md:px-8">
+        <div className="mt-2 w-full text-center text-2xl font-bold text-gray-200 sm:mt-6 sm:text-4xl">
           李慧芯
         </div>
-        <div
-          className={`text-gray-200 ${
-            width < 470 ? "text-sm" : "text-base"
-          } font-normal w-full text-center`}
-        >
+        <div className="w-full text-center text-sm font-normal text-gray-200 sm:text-base">
           每天讓自己進步一點
         </div>
-        <div
-          className={`text-gray-200 ${
-            width < 470 ? "text-lg" : "text-2xl"
-          } font-bold mx-[5%] mt-4`}
-        >
+        <div className="mx-[5%] mt-4 text-lg font-bold text-gray-200 sm:text-2xl">
           關於About
         </div>
         <Separator className="mb-4 bg-gray-200 mx-auto" />
-        <div
-          className={`text-gray-200 ${
-            width < 470 ? "text-base" : "text-xl"
-          } font-normal w-full px-5 text-center space-y-1`}
-        >
+        <div className="w-full space-y-1 px-1 text-center text-base font-normal text-gray-200 sm:px-5 sm:text-xl">
           <p>
-            目前就讀 國立臺北科技大學 {width < 470 ? <br /> : null}
-            電機工程系 碩士班
+            <span>目前就讀 國立臺北科技大學</span>
+            <span className="block sm:inline"> 電機工程系 碩士班</span>
           </p>
           <p>正在學習：Python、React ...</p>
         </div>
-        <div
-          className={`text-gray-200 ${
-            width < 470 ? "text-lg" : "text-2xl"
-          } font-bold mx-[5%] mt-8`}
-        >
+        <div className="mx-[5%] mt-8 text-lg font-bold text-gray-200 sm:text-2xl">
           經歷 Experiences
         </div>
         <Separator className="mb-4 bg-gray-200 mx-auto" />
-        <ul
-          className={`text-gray-200 ${
-            width < 470 ? "pl-4" : "px-10"
-          } md:px-15 list-disc list-inside space-y-1`}
-        >
+        <ul className="w-full list-disc space-y-1 px-2 pl-5 text-sm text-gray-200 sm:px-10 sm:text-base md:px-15">
           <li>
-            2025年12月 - 2026年5月 {width < 470 ? <br /> : null}
-            <span className={width < 470 ? "px-6" : ""}>與人協作開發</span>
+            <span>2025年12月 - 2026年5月</span>
+            <span className="block ps-5 sm:inline sm:ps-1">與人協作開發</span>
           </li>
           <li>
-            2021年華碩文教基金會 {width < 470 ? <br /> : null}
-            <span className={width < 470 ? "px-6" : ""}>
+            <span>2021年華碩文教基金會</span>
+            <span className="block ps-5 sm:inline sm:ps-1">
               i-Taiwan 數位志工計畫
               <span className="font-bold"> 隊輔</span>
             </span>
@@ -75,19 +48,11 @@ export default function CardText() {
             教育部數位學伴 <span className="font-bold">國三數學學伴</span>
           </li>
         </ul>
-        <div
-          className={`text-gray-200 ${
-            width < 470 ? "text-lg" : "text-2xl"
-          } font-bold mx-[5%] mt-8`}
-        >
+        <div className="mx-[5%] mt-8 text-lg font-bold text-gray-200 sm:text-2xl">
           社團 Club
         </div>
         <Separator className="mb-4 bg-gray-200 mx-auto" />
-        <ul
-          className={`text-gray-200 ${
-            width < 470 ? "pl-4" : "px-10"
-          } md:px-15 list-disc list-inside space-y-1 mb-6`}
-        >
+        <ul className="mb-2 w-full list-disc space-y-1 px-2 pl-5 text-sm text-gray-200 sm:mb-6 sm:px-10 sm:text-base md:px-15">
           <li>
             2021年勤益校安嘉年華 <span className="font-bold">表演</span>
           </li>

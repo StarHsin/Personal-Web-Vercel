@@ -61,24 +61,24 @@ export default function ActivityPage() {
 
   if (loading) {
     return (
-      <nav className="absolute w-full min-h-screen pt-20 bg-slate-800">
+      <main className="min-h-screen w-full bg-slate-800 px-4 pt-24">
         <StickyNavbar />
-        <div className="w-full max-w-3xl mx-auto p-4 flex flex-col justify-center items-center text-white">
+        <div className="mx-auto flex w-full max-w-3xl flex-col items-center justify-center p-4 text-white">
           <Progress value={progressValue} className="w-full" />
           <div className="mt-2 text-sm">
             載入中... ({Math.round(progressValue)}%)
           </div>{" "}
         </div>
-      </nav>
+      </main>
     );
   }
 
   return (
-    <nav className="absolute w-full min-h-screen pt-20 bg-slate-800">
+    <main className="min-h-screen w-full bg-slate-800 px-3 pt-24 sm:px-4">
       <StickyNavbar />
-      <div className="w-full max-w-3xl mx-auto p-4 flex flex-col justify-center items-center">
+      <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center">
         <ActivityScraping folders={folders} onFolderClick={handlePhotos} />
       </div>
-    </nav>
+    </main>
   );
 }

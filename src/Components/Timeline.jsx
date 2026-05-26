@@ -1,20 +1,16 @@
 import TimelineItem from "./HomePage/TimelineItem";
 import { competitions } from "../data/competitions";
 
-export default function Timeline({ width }) {
+export default function Timeline() {
   return (
-    <div className="container mx-auto w-4/5">
-      <h2 className="text-4xl font-bold text-center text-gray-200 mb-4">
+    <div className="mx-auto w-full max-w-5xl px-1 sm:px-4">
+      <h2 className="mb-6 text-center text-3xl font-bold text-gray-200 sm:text-4xl">
         競賽榮譽
       </h2>
-      <div className="relative wrap overflow-hidden py-6 h-full">
-        <div
-          className={`border-2-2 absolute border-opacity-20 border-gray-200 h-full border md:left-1/4 ${
-            width < 470 ? "left-1/8" : "left-1/5"
-          }`}
-        ></div>
+      <div className="relative overflow-hidden py-4">
+        <div className="absolute left-5 top-0 h-full border border-gray-200/20 md:left-1/2"></div>
         {competitions.map((item, index) => (
-          <TimelineItem key={index} item={item} index={index} width={width} />
+          <TimelineItem key={index} item={item} index={index} />
         ))}
       </div>
     </div>

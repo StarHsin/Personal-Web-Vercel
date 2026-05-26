@@ -35,15 +35,15 @@ export default function Lightbox({
   const currentImageSrc = images[currentImageIndex];
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 px-12 py-16 sm:px-20">
       <button
-        className="absolute top-5 right-5 text-white text-3xl font-bold"
+        className="absolute right-4 top-4 z-10 text-3xl font-bold text-white sm:right-5 sm:top-5"
         onClick={onClose}
       >
         <AiOutlineClose />
       </button>
       <button
-        className="absolute left-5 text-white text-5xl"
+        className="absolute left-2 z-10 text-3xl text-white sm:left-5 sm:text-5xl"
         onClick={prevImage}
       >
         <FaChevronLeft />
@@ -51,11 +51,11 @@ export default function Lightbox({
       <LazyLoadImage
         src={currentImageSrc}
         alt=""
-        className="max-w-full max-h-[80vh] rounded-lg shadow-lg"
+        className="max-h-[82svh] max-w-full rounded-lg object-contain shadow-lg"
         effect="blur"
       />
       <button
-        className="absolute right-5 text-white text-5xl"
+        className="absolute right-2 z-10 text-3xl text-white sm:right-5 sm:text-5xl"
         onClick={nextImage}
       >
         <FaChevronRight />

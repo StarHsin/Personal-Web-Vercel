@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import StickyNavbar from "../StickyNavbar";
 import { ref, getDownloadURL } from "firebase/storage";
 import {
   BookOpenCheck,
@@ -150,7 +151,7 @@ function ResumeSection({
           {title}
         </h2>
       </div>
-      <ul className="grid gap-x-12 gap-y-2 sm:grid-cols-2">
+      <ul className="grid gap-x-12 gap-y-2 md:grid-cols-2">
         {items.map((item) => {
           const shouldSpanFull =
             (title === "獲獎紀錄" && item.includes("TIRC")) ||
@@ -161,8 +162,8 @@ function ResumeSection({
           return (
             <li
               key={item}
-              className={`flex items-start gap-3 text-[15px] leading-7 text-zinc-900 ${
-                shouldSpanFull ? "sm:col-span-2" : ""
+              className={`flex min-w-0 items-start gap-3 text-[15px] leading-7 text-zinc-900 ${
+                shouldSpanFull ? "md:col-span-2" : ""
               }`}
             >
               {shouldUseRedCheck ? (
@@ -179,7 +180,7 @@ function ResumeSection({
                 />
               )}
               <span
-                className={`${highlight ? "font-medium" : ""} whitespace-pre-line`}
+                className={`${highlight ? "font-medium" : ""} min-w-0 whitespace-pre-line break-words`}
               >
                 {renderBoldText(item, boldKeywords)}
               </span>
@@ -193,10 +194,11 @@ function ResumeSection({
 
 export default function Resume() {
   return (
-    <main className="min-h-screen bg-zinc-100 px-3 py-8 text-zinc-950 sm:px-6 lg:py-12">
-      <article className="mx-auto max-w-[820px] bg-white px-6 py-7 shadow-[0_16px_50px_rgba(15,23,42,0.16)] sm:px-10 sm:py-9">
-        <header className="grid items-center gap-6 border-zinc-800 sm:grid-cols-[128px_1fr_230px]">
-          <div className="profile-photo-frame mx-auto sm:mx-0">
+    <main className="min-h-screen bg-zinc-100 px-3 pb-6 pt-21 text-zinc-950 sm:px-6 lg:py-12">
+      <StickyNavbar />
+      <article className="mx-auto w-full max-w-[820px] bg-white px-4 py-6 shadow-[0_16px_50px_rgba(15,23,42,0.16)] sm:px-8 sm:py-9 lg:px-10">
+        <header className="grid items-center gap-6 border-zinc-800 lg:grid-cols-[128px_1fr_230px]">
+          <div className="profile-photo-frame mx-auto lg:mx-0">
             <FirebaseProfilePhoto
               path={profile.photo}
               alt={`${profile.name} 頭像`}
@@ -213,20 +215,20 @@ export default function Resume() {
             {/*<p className="mt-3 text-base font-semibold text-zinc-700">{profile.role}</p>*/}
           </div>
 
-          <div className="space-y-2 text-center sm:text-right">
+          <div className="space-y-2 text-center lg:text-right">
             <h2 className="text-2xl font-black tracking-normal text-zinc-950">
               {profile.name}
             </h2>
             <a
               href={`tel:${profile.phone}`}
-              className="flex items-center justify-center gap-2 text-sm text-zinc-800 sm:justify-end"
+              className="flex items-center justify-center gap-2 text-sm text-zinc-800 lg:justify-end"
             >
               <span>{profile.phone}</span>
               <Phone className="h-4 w-4 text-blue-700" aria-hidden="true" />
             </a>
             <a
               href={`mailto:${profile.email}`}
-              className="flex items-center justify-center gap-2 break-all text-sm text-blue-700 underline-offset-4 hover:underline sm:justify-end"
+              className="flex items-center justify-center gap-2 break-all text-sm text-blue-700 underline-offset-4 hover:underline lg:justify-end"
             >
               <span>{profile.email}</span>
               <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />

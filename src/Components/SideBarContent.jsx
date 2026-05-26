@@ -48,7 +48,7 @@ export default function SideBarContent() {
   };
 
   return (
-    <div className="flex h-full flex-col bg-white p-4">
+    <div className="flex h-full min-w-0 flex-col bg-white p-4">
       <div className="flex items-center justify-between pb-4">
         <SheetTitle className="text-base font-semibold text-gray-500 uppercase">
           Menu
@@ -61,7 +61,7 @@ export default function SideBarContent() {
             <Button
               onClick={handleNavigateToAwards}
               variant="ghost" // 可以選擇 ghost, link 等樣式
-              className="flex w-full items-center justify-start p-2 text-gray-500 hover:text-gray-900"
+              className="flex h-auto w-full items-center justify-start p-2 text-left text-gray-500 hover:text-gray-900"
             >
               <GrCertificate className="h-5 w-5" />
               <span className="ml-3 font-semibold">獲獎紀錄</span>
@@ -73,7 +73,7 @@ export default function SideBarContent() {
               <CollapsibleTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="flex w-full items-center justify-start p-2 text-gray-500 hover:text-gray-900"
+                  className="flex h-auto w-full items-center justify-start p-2 text-left text-gray-500 hover:text-gray-900"
                 >
                   <PiNotePencilBold className="h-5 w-5" />
                   <span className="ml-3 flex-1 whitespace-nowrap text-left rtl:text-right font-semibold">
@@ -92,7 +92,7 @@ export default function SideBarContent() {
                     <Button
                       onClick={handleWeb}
                       variant="ghost"
-                      className="flex w-full items-center justify-start rounded-lg pl-11 font-semibold text-gray-900 hover:bg-gray-100"
+                      className="h-auto w-full justify-start whitespace-normal rounded-lg py-2 pl-11 text-left font-semibold leading-snug text-gray-900 hover:bg-gray-100"
                     >
                       使用React製作個人網頁
                     </Button>
@@ -101,7 +101,7 @@ export default function SideBarContent() {
                     <Button
                       onClick={handleJapanese}
                       variant="ghost"
-                      className="flex w-full items-center justify-start rounded-lg pl-11 font-semibold text-gray-900 hover:bg-gray-100"
+                      className="h-auto w-full justify-start whitespace-normal rounded-lg py-2 pl-11 text-left font-semibold leading-snug text-gray-900 hover:bg-gray-100"
                     >
                       日語學習筆記
                     </Button>
@@ -115,7 +115,7 @@ export default function SideBarContent() {
           <li>
             <Button
               variant="ghost"
-              className="flex w-full items-center justify-start p-2 font-semibold text-gray-500 hover:text-gray-900"
+              className="flex h-auto w-full items-center justify-start p-2 text-left font-semibold text-gray-500 hover:text-gray-900"
             >
               <FaRegFileAlt className="h-5 w-5" />
               <span className="ml-3 font-bold">作品集</span>
@@ -126,7 +126,7 @@ export default function SideBarContent() {
             <Button
               onClick={handleResume}
               variant="ghost"
-              className="flex w-full items-center justify-start p-2 font-semibold text-gray-500 hover:text-gray-900"
+              className="flex h-auto w-full items-center justify-start p-2 text-left font-semibold text-gray-500 hover:text-gray-900"
             >
               <SquareUserRound className="h-5 w-5" />
               <span className="ml-3 font-bold">簡歷</span>
@@ -145,7 +145,7 @@ export default function SideBarContent() {
         </ul>
       </div>
 
-      <div className="mt-auto flex items-center">
+      <div className="mt-auto flex min-w-0 items-center">
         <Avatar className="h-10 w-10 rounded-md">
           <AvatarImage
             src="https://github.com/StarHsin/Personal-Web-Vercel/blob/main/public/36103.jpg?raw=true"
@@ -153,9 +153,11 @@ export default function SideBarContent() {
           />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        <div className="ml-4 flex flex-col">
+        <div className="ml-4 flex min-w-0 flex-col">
           <span className="text-gray-700 text-sm font-semibold">李慧芯</span>
-          <span className="text-gray-500 text-xs">otzhelen2018@gmail.com</span>
+          <span className="truncate text-xs text-gray-500">
+            otzhelen2018@gmail.com
+          </span>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ActivityScraping({ folders, onFolderClick }) {
   return (
-    <div className="max-w-5xl mx-auto p-4">
+    <div className="mx-auto w-full max-w-5xl p-1 sm:p-4">
       {folders.map((folder, index) => {
         const displayedFolderName = folder.name.startsWith("00")
           ? folder.name.slice(2)
@@ -13,17 +13,17 @@ export default function ActivityScraping({ folders, onFolderClick }) {
         return (
           <button
             key={index}
-            className="mb-6 w-full text-left flex flex-col justify-center items-center"
+            className="mb-8 flex w-full flex-col items-center justify-center text-left"
             onClick={() => onFolderClick(folder.name)}
           >
-            <div className="text-[2rem] font-bold text-white mb-2">
+            <div className="mb-3 max-w-full break-words text-center text-2xl font-bold text-white sm:text-[2rem]">
               {displayedFolderName}
             </div>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid w-full grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
               {folder.images.map((src, idx) => (
                 <LazyLoadImage
                   key={idx}
-                  className="w-full h-auto rounded-lg mb-4"
+                  className="aspect-[4/3] w-full rounded-lg object-cover"
                   src={src}
                   alt=""
                   effect="blur"
