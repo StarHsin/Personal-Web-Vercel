@@ -1,5 +1,8 @@
 import { motion, useAnimation } from "framer-motion"; // 導入 useAnimation
 
+const MotionDiv = motion.div;
+const MotionSpan = motion.span;
+
 export default function TextAnimation({ text }) {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -50,7 +53,7 @@ export default function TextAnimation({ text }) {
   };
 
   return (
-    <motion.div
+    <MotionDiv
       className="flex"
       variants={containerVariants}
       initial="hidden"
@@ -60,19 +63,19 @@ export default function TextAnimation({ text }) {
     >
       {/* 渲染主要文字 */}
       {mainText.split("").map((char, index) => (
-        <motion.span key={index} variants={childVariants}>
+        <MotionSpan key={index} variants={childVariants}>
           {char === " " ? "\u00A0" : char}
-        </motion.span>
+        </MotionSpan>
       ))}
 
       {/* 渲染游標並應用閃爍動畫 */}
-      <motion.span
+      <MotionSpan
         variants={cursorVariants}
         initial={{ opacity: 0 }} // 游標一開始是完全透明的
         animate={cursorControls} // 【關鍵改動】將 animate 指向 controls 物件
       >
         {cursor}
-      </motion.span>
-    </motion.div>
+      </MotionSpan>
+    </MotionDiv>
   );
 }

@@ -8,6 +8,8 @@ import { competitions } from "../../data/competitions";
 import { academics } from "../../data/academics";
 import { literary } from "../../data/literary";
 
+const MotionDiv = motion.div;
+
 export default function Awards() {
   return (
     <div className="w-full min-h-screen overflow-hidden bg-gray-900 text-white">
@@ -45,37 +47,37 @@ export default function Awards() {
             {/* 技能競賽內容 */}
             <TabsContent value="skills" className="mt-8">
               {/* 可選的 Framer Motion 動畫 */}
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
                 <AwardCategory title="技能競賽" data={competitions} />
-              </motion.div>
+              </MotionDiv>
             </TabsContent>
 
             {/* 學業表現內容 */}
             <TabsContent value="academics" className="mt-8">
               {/* 可選的 Framer Motion 動畫 */}
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
                 <AwardCategory title="學業表現" data={academics} />
-              </motion.div>
+              </MotionDiv>
             </TabsContent>
 
             {/* 文學競賽內容 */}
             <TabsContent value="literary" className="mt-8">
               {/* 可選的 Framer Motion 動畫 */}
-              <motion.div
+              <MotionDiv
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
                 <AwardCategory title="文學競賽" data={literary} />
-              </motion.div>
+              </MotionDiv>
             </TabsContent>
           </Tabs>
         </div>

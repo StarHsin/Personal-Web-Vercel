@@ -16,6 +16,8 @@ const IconMap = {
   medal: FaMedal,
 };
 
+const MotionDiv = motion.div;
+
 export default function TimelineItem({ item, index, width }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 }); // 當項目有 50% 進入視圖時觸發一次
@@ -32,7 +34,7 @@ export default function TimelineItem({ item, index, width }) {
   };
 
   return (
-    <motion.div
+    <MotionDiv
       ref={ref}
       className="mb-8 flex justify-end items-center w-full relative" // 新增 left-timeline 類別
       variants={variants}
@@ -61,6 +63,6 @@ export default function TimelineItem({ item, index, width }) {
       >
         <IconComponent className="text-white text-2xl" />
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }

@@ -9,15 +9,12 @@ export default function Lightbox({
   images,
   onClose,
   initialIndex,
-  imageType,
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(initialIndex || 0);
-  const [currentImageType, setCurrentImageType] = useState(imageType || "");
 
   useEffect(() => {
     setCurrentImageIndex(initialIndex || 0);
-    setCurrentImageType(imageType || "");
-  }, [initialIndex, imageType, isOpen]);
+  }, [initialIndex, isOpen]);
 
   if (!isOpen) {
     return null;

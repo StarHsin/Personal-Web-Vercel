@@ -25,10 +25,6 @@ export default function SideBarContent() {
   const [dropDown, setDropDown] = useState(false);
   const navigate = useNavigate();
 
-  const toggleDropDown = () => {
-    setDropDown(!dropDown);
-  };
-
   const handleNavigateToAwards = () => {
     navigate("/awards");
     // 您可能需要在這裡添加關閉 Sheet 的邏輯

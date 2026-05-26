@@ -13,13 +13,11 @@ export default function ActivityPage() {
   const navigate = useNavigate();
   const [folders, setFolders] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [progressValue, setProgressValue] = useState(0); // 可選：追蹤載入進度
 
   useEffect(() => {
     const fetchFoldersAndPreviews = async () => {
       setLoading(true);
-      setError(null);
       setProgressValue(0); // 重置進度
       const activityImgRef = ref(storage, PARENT_FOLDER_PATH);
 
@@ -49,7 +47,6 @@ export default function ActivityPage() {
         setFolders([...results].reverse());
       } catch (err) {
         console.error("Error fetching folders:", err);
-        setError(err);
       } finally {
         setLoading(false);
       }

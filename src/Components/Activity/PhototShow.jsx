@@ -15,14 +15,12 @@ export default function PhotoShow({ folderName }) {
   const [currentLightboxIndex, setCurrentLightboxIndex] = useState(0);
   const [currentLightboxType, setCurrentLightboxType] = useState("");
   const [loading, setLoading] = useState(true); // 加入 loading 狀態
-  const [error, setError] = useState(null);
   const [progressValue, setProgressValue] = useState(0); // 可選：追蹤載入進度
 
   useEffect(() => {
     setPortraitImages([]);
     setLandscapeImages([]);
     setLoading(true); // 開始載入時設定為 true
-    setError(null);
     setProgressValue(0); // 重置進度
     const folderPath = `${PARENT_FOLDER_PATH}/${folderName}`;
     const listRef = ref(storage, folderPath);
@@ -72,7 +70,6 @@ export default function PhotoShow({ folderName }) {
       })
       .catch((error) => {
         console.error("Error fetching images:", error);
-        setError(error);
       })
       .finally(() => {
         setLoading(false); // 載入完成後設定為 false
@@ -167,7 +164,6 @@ export default function PhotoShow({ folderName }) {
           images={getCurrentImageList()}
           onClose={closeLightbox}
           initialIndex={currentLightboxIndex}
-          imageType={currentLightboxType}
         />
       )}
     </div>

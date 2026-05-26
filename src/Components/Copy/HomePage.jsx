@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import DynamicBackgrounds from "../DynamicBackgrounds";
 import StickyNavbar from "../StickyNavbar";
 
