@@ -57,9 +57,7 @@ export default function Home() {
       <div
         className="w-full flex justify-center"
         style={{
-          marginTop: `${
-            width < 470 ? height * 0.5 + 170 : height * 0.5 + 120
-          }px`,
+          marginTop: `${width < 470 ? height * 0.5 + 170 : height * 0.2 + 150}px`,
         }}
       >
         {/* 調整 mt-20 以避免與卡片重疊 */}

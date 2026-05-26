@@ -14,14 +14,15 @@ export default function LoadFirebaseImg({ path }) {
       } catch (error) {
         console.error(
           "Error fetching background image from Firebase Storage:",
-          error
+          error,
         );
         // 您可以在這裡設定一個預設圖片 URL，以防載入失敗
       }
     };
 
     fetchImage();
-  }, []);
+  }, [path]);
+  if (!backgroundImageUrl) return null;
   return (
     <img
       src={backgroundImageUrl}

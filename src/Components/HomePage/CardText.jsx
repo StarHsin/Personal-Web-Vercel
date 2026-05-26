@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Separator } from "../ui/separator";
 import { Card, CardContent } from "../ui/card";
 
 export default function CardText() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, _setWidth] = useState(window.innerWidth);
 
   return (
     <Card className="w-4/5 md:w-3/5 shadow-lg bg-slate-800 border-slate-800 z-20">
@@ -36,15 +36,10 @@ export default function CardText() {
           } font-normal w-full px-5 text-center space-y-1`}
         >
           <p>
-            國立勤益科技大學 電機工程系
-            {width < 470 ? <br /> : null}
-            應屆畢業生
-          </p>
-          <p>
-            即將就讀 國立臺北科技大學 {width < 470 ? <br /> : null}
+            目前就讀 國立臺北科技大學 {width < 470 ? <br /> : null}
             電機工程系 碩士班
           </p>
-          <p>正在學習：Python、React...</p>
+          <p>正在學習：Python、React ...</p>
         </div>
         <div
           className={`text-gray-200 ${
@@ -59,6 +54,10 @@ export default function CardText() {
             width < 470 ? "pl-4" : "px-10"
           } md:px-15 list-disc list-inside space-y-1`}
         >
+          <li>
+            2025年12月 - 2026年5月 {width < 470 ? <br /> : null}
+            <span className={width < 470 ? "px-6" : ""}>與人協作開發</span>
+          </li>
           <li>
             2021年華碩文教基金會 {width < 470 ? <br /> : null}
             <span className={width < 470 ? "px-6" : ""}>

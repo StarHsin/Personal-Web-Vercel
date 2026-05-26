@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ActivityPage from "./Components/Activity/ActivityPage";
 import Home from "./Components/HomePage/Home";

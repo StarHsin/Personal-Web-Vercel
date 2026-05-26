@@ -1,4 +1,4 @@
-import React from "react"; // 👈 引入 React
+import React from "react";
 import {
   Breadcrumb,
   BreadcrumbList,
