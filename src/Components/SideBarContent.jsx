@@ -4,6 +4,7 @@ import { GrCertificate } from "react-icons/gr";
 import { PiNotePencilBold } from "react-icons/pi";
 import { FaChevronDown, FaRegFileAlt } from "react-icons/fa";
 import { FiActivity } from "react-icons/fi";
+import { SquareUserRound } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 // 導入 shadcn/ui 元件
@@ -36,6 +37,10 @@ export default function SideBarContent() {
 
   const handleActivity = () => {
     navigate("/Activity");
+  };
+
+  const handleResume = () => {
+    navigate("/Resume");
   };
 
   const handleWeb = () => {
@@ -123,6 +128,16 @@ export default function SideBarContent() {
 
           <li>
             <Button
+              onClick={handleResume}
+              variant="ghost"
+              className="flex w-full items-center justify-start p-2 font-semibold text-gray-500 hover:text-gray-900"
+            >
+              <SquareUserRound className="h-5 w-5" />
+              <span className="ml-3 font-bold">簡歷</span>
+            </Button>
+          </li>
+          <li>
+            <Button
               onClick={handleActivity}
               variant="ghost"
               className="flex w-full items-center justify-start p-2 font-semibold text-gray-500 hover:text-gray-900"
@@ -144,9 +159,7 @@ export default function SideBarContent() {
         </Avatar>
         <div className="ml-4 flex flex-col">
           <span className="text-gray-700 text-sm font-semibold">李慧芯</span>
-          <span className="text-gray-500 text-xs">
-            3b012015@gm.student.ncut.edu.tw
-          </span>
+          <span className="text-gray-500 text-xs">otzhelen2018@gmail.com</span>
         </div>
       </div>
     </div>

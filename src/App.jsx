@@ -4,6 +4,7 @@ import Home from "./Components/HomePage/Home";
 import ActivityPhotos from "./Components/Activity/ActivityPhotos";
 import Web from "./Components/Web";
 import Awards from "./Components/Award/Awards";
+import Resume from "./Components/Resume/Resume";
 
 import HomePage from "./Components/HomePage/HomePage";
 
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/Japanese" element={<Web />} />
           <Route path="/Activity" element={<ActivityPage />} />
           <Route path="/Activity/Photos" element={<ActivityPhotos />} />
+          <Route path="/Resume" element={<Resume />} />
         </Routes>
       </Router>
     </>

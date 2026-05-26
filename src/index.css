@@ -122,3 +122,28 @@
 @theme {
   --breakpoint-xs: 400px;
 }
+
+.profile-photo-frame {
+  position: relative;
+  width: 120px;
+  height: 150px;
+  padding: 5px;
+  background: white;
+  border: 1px solid #d4d4d8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 0 100%);
+}
+
+.profile-photo-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  background: #f4f4f5;
+  border-left: 1px solid #d4d4d8;
+  border-bottom: 1px solid #d4d4d8;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.18);
+}
